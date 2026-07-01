@@ -4028,3 +4028,185 @@ header.sticky {
   transform: translateY(0);
 }
 
+/* ==========================================================================
+   MOBILE & RESPONSIVE POLISH OVERRIDES (max-width: 900px & max-width: 480px)
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  /* Cart Button Extracted to header bar */
+  .btn-cart {
+    position: fixed !important;
+    top: 22px !important;
+    right: 80px !important;
+    z-index: 110 !important;
+    background-color: var(--color-white) !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-text-main) !important;
+    width: 40px !important;
+    height: 40px !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  header.sticky .btn-cart {
+    top: 14px !important;
+    background-color: var(--color-bg) !important;
+  }
+
+  .btn-cart .cart-badge {
+    border-color: var(--color-white) !important;
+  }
+
+  header.sticky .btn-cart .cart-badge {
+    border-color: var(--color-bg) !important;
+  }
+
+  /* Make sidebar category selectors horizontal scrolling chips */
+  .sidebar-categories {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding-bottom: 0.5rem !important;
+    gap: 0.5rem !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar-categories::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .category-filter-btn {
+    width: auto !important;
+    flex-shrink: 0 !important;
+    padding: 0.5rem 1rem !important;
+    border: 1px solid var(--color-border) !important;
+  }
+
+  /* Make sidebar dietary filters horizontal scrolling chips */
+  .dietary-filters {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding-bottom: 0.5rem !important;
+    gap: 0.5rem !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dietary-filters::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .dietary-filter-btn {
+    flex-shrink: 0 !important;
+  }
+
+  .sidebar-widget {
+    padding: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* Stats grid wrapping on mobile to prevent overflow */
+  .stats-grid {
+    flex-wrap: wrap !important;
+    gap: 2rem !important;
+    justify-content: space-between;
+  }
+
+  .stat-item {
+    flex: 1 1 40%;
+  }
+
+  /* Values grid auto-fit override for small screens */
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Subpage Hero Height reduction */
+  .subpage-hero {
+    height: 280px !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .subpage-hero h1 {
+    font-size: 2.25rem !important;
+  }
+
+  /* Horizontal Scrolling Menu Tabs */
+  .menu-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding-bottom: 0.75rem !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .tab-btn {
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Homepage Hero sizing and buttons */
+  .hero-content h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-outline {
+    width: 100% !important;
+    padding: 0.85rem 1.5rem !important;
+  }
+
+  /* Reservation modal adjustments */
+  .modal-container {
+    padding: 2rem 1.25rem 1.5rem 1.25rem !important;
+  }
+
+  .modal-header h3 {
+    font-size: 1.75rem !important;
+  }
+
+  /* Cart drawer padding reduction */
+  .cart-header {
+    padding: 1.5rem 1.25rem 1rem 1.25rem !important;
+  }
+
+  .cart-items-container {
+    padding: 1rem 1.25rem !important;
+  }
+
+  .cart-footer {
+    padding: 1.25rem !important;
+  }
+
+  /* About intro images sizing */
+  .about-intro-main-img {
+    height: 280px !important;
+  }
+
+  .sourcing-img-left {
+    height: 280px !important;
+  }
+}
+
+
