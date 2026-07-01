@@ -177,7 +177,7 @@ header.sticky .btn-reserve:hover {
   color: var(--color-primary);
 }
 
-nav {
+header nav {
   display: flex;
   align-items: center;
   gap: 2.5rem;
@@ -253,7 +253,7 @@ header.sticky .mobile-menu-btn span {
     display: flex;
   }
   
-  nav {
+  header nav {
     position: fixed;
     top: 0;
     right: -100%;
@@ -269,16 +269,16 @@ header.sticky .mobile-menu-btn span {
     z-index: 99;
   }
   
-  nav.active {
+  header nav.active {
     right: 0;
   }
   
-  nav .nav-link {
+  header nav .nav-link {
     color: var(--color-text-main);
     font-size: 1.1rem;
   }
   
-  nav .btn-reserve {
+  header nav .btn-reserve {
     background-color: var(--color-text-main);
     color: var(--color-bg);
     width: 80%;
