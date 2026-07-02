@@ -1285,24 +1285,20 @@ function setupCountUpAnimations() {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
     const isDecimal = el.dataset.decimal === 'true';
-    const isLarge = target >= 1000;
+    // For display: if target >= 1000, we show as "target/1000" (e.g. 200000 -> 200)
+    const displayTarget = target >= 1000 ? target / 1000 : target;
     const duration = 2000;
     const steps = 60;
     const stepTime = duration / steps;
-    let current = 0;
     let step = 0;
 
     const timer = setInterval(() => {
       step++;
-      current = target * (step / steps);
-      // Ease-out
       const ease = 1 - Math.pow(1 - step / steps, 3);
-      current = target * ease;
+      const current = displayTarget * ease;
 
       if (isDecimal) {
         el.textContent = current.toFixed(1) + suffix;
-      } else if (isLarge) {
-        el.textContent = Math.floor(current / 1000) + 'K' + suffix;
       } else {
         el.textContent = Math.floor(current) + suffix;
       }
@@ -1310,11 +1306,9 @@ function setupCountUpAnimations() {
       if (step >= steps) {
         clearInterval(timer);
         if (isDecimal) {
-          el.textContent = target.toFixed(1) + suffix;
-        } else if (isLarge) {
-          el.textContent = Math.floor(target / 1000) + 'K' + suffix;
+          el.textContent = displayTarget.toFixed(1) + suffix;
         } else {
-          el.textContent = target + suffix;
+          el.textContent = displayTarget + suffix;
         }
       }
     }, stepTime);

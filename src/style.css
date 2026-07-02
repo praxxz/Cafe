@@ -4027,13 +4027,14 @@ header.sticky {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* ==========================================================================
-   MOBILE & RESPONSIVE POLISH OVERRIDES (max-width: 900px & max-width: 480px)
+   MOBILE & RESPONSIVE POLISH — COMPREHENSIVE OVERRIDES
    ========================================================================== */
 
+/* ── Tablet (max-width: 900px) ── */
 @media (max-width: 900px) {
-  /* Cart Button Extracted to header bar */
+
+  /* Cart Button: pull out of nav and fix to header bar */
   .btn-cart {
     position: fixed !important;
     top: 22px !important;
@@ -4046,21 +4047,18 @@ header.sticky {
     height: 40px !important;
     box-shadow: var(--shadow-sm) !important;
   }
-
   header.sticky .btn-cart {
     top: 14px !important;
     background-color: var(--color-bg) !important;
   }
-
   .btn-cart .cart-badge {
     border-color: var(--color-white) !important;
   }
-
   header.sticky .btn-cart .cart-badge {
     border-color: var(--color-bg) !important;
   }
 
-  /* Make sidebar category selectors horizontal scrolling chips */
+  /* Sidebar filters → horizontal scroll chips */
   .sidebar-categories {
     flex-direction: row !important;
     overflow-x: auto !important;
@@ -4070,10 +4068,7 @@ header.sticky {
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch;
   }
-
-  .sidebar-categories::-webkit-scrollbar {
-    display: none !important;
-  }
+  .sidebar-categories::-webkit-scrollbar { display: none !important; }
 
   .category-filter-btn {
     width: auto !important;
@@ -4082,7 +4077,6 @@ header.sticky {
     border: 1px solid var(--color-border) !important;
   }
 
-  /* Make sidebar dietary filters horizontal scrolling chips */
   .dietary-filters {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -4092,49 +4086,105 @@ header.sticky {
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch;
   }
-
-  .dietary-filters::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .dietary-filter-btn {
-    flex-shrink: 0 !important;
-  }
+  .dietary-filters::-webkit-scrollbar { display: none !important; }
+  .dietary-filter-btn { flex-shrink: 0 !important; }
 
   .sidebar-widget {
     padding: 1.25rem !important;
     margin-bottom: 1.25rem !important;
   }
 
-  /* Stats grid wrapping on mobile to prevent overflow */
+  /* Stats grid wrapping */
   .stats-grid {
     flex-wrap: wrap !important;
-    gap: 2rem !important;
-    justify-content: space-between;
+    gap: 1.5rem !important;
   }
-
   .stat-item {
     flex: 1 1 40%;
+    min-width: 0;
   }
 
-  /* Values grid auto-fit override for small screens */
+  /* Values grid safe minmax */
   .values-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Subpage Hero Height reduction */
-  .subpage-hero {
-    height: 280px !important;
-    padding-bottom: 2.5rem !important;
+    grid-template-columns: 1fr !important;
   }
 
-  .subpage-hero h1 {
+  /* Numbers section: 2-column grid with proper containment */
+  .numbers-container {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
+  .numbers-section {
+    padding: 4rem 1rem !important;
+  }
+  .number-count {
+    font-size: 2.5rem !important;
+  }
+  .number-item p {
+    font-size: 0.7rem !important;
+  }
+  .number-item {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  /* Newsletter section stacking */
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .newsletter-text {
+    max-width: 100%;
+  }
+  .newsletter-form {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Section padding reduction */
+  .passion-section,
+  .features-section,
+  .gallery-section,
+  .menu-section,
+  .timeline-section,
+  .team-section,
+  .values-section {
+    padding: 5rem 1.5rem !important;
+  }
+
+  /* Section title sizing */
+  .section-title {
     font-size: 2.25rem !important;
   }
 
-  /* Horizontal Scrolling Menu Tabs */
+  /* Features image height */
+  .features-main-img {
+    height: 380px !important;
+  }
+
+  /* Footer padding */
+  .footer-grid {
+    gap: 2rem !important;
+  }
+}
+
+/* ── Mobile (max-width: 768px) ── */
+@media (max-width: 768px) {
+
+  /* Subpage hero compact */
+  .subpage-hero {
+    height: 260px !important;
+    padding-bottom: 2rem !important;
+  }
+  .subpage-hero h1 {
+    font-size: 2rem !important;
+  }
+  .subpage-hero p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Horizontal scrolling menu tabs */
   .menu-tabs {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
@@ -4144,69 +4194,281 @@ header.sticky {
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch;
   }
+  .menu-tabs::-webkit-scrollbar { display: none !important; }
+  .tab-btn { flex-shrink: 0 !important; }
 
-  .menu-tabs::-webkit-scrollbar {
-    display: none !important;
+  /* Menu grid: 1 column on phones */
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
 
-  .tab-btn {
-    flex-shrink: 0 !important;
+  /* Food card image height */
+  .food-card-img-container {
+    height: 200px !important;
+  }
+
+  /* Gallery: simple 2-column with equal rows */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: 180px !important;
+  }
+  .gallery-item-1 {
+    grid-column: 1 / 3 !important;
+    grid-row: auto !important;
+  }
+  .gallery-item-2,
+  .gallery-item-3,
+  .gallery-item-4,
+  .gallery-item-5 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* About intro */
+  .about-intro-section {
+    gap: 3rem !important;
+    padding: 5rem 1.5rem !important;
+  }
+  .about-intro-content h2 {
+    font-size: 2.25rem !important;
+  }
+  .about-intro-main-img {
+    height: 300px !important;
+  }
+  .about-quote {
+    font-size: 1.1rem !important;
+  }
+
+  /* Sourcing section */
+  .sourcing-section {
+    gap: 3rem !important;
+    padding: 5rem 1.5rem !important;
+  }
+  .sourcing-content h2 {
+    font-size: 2.25rem !important;
+  }
+  .sourcing-img-left {
+    height: 300px !important;
+  }
+
+  /* Team cards */
+  .team-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .team-card-img-box {
+    height: 200px !important;
+  }
+
+  /* Timeline */
+  .timeline-section .section-title {
+    margin-bottom: 3rem !important;
+  }
+
+  /* About CTA */
+  .about-cta-container h2 {
+    font-size: 2.25rem !important;
+  }
+
+  /* Newsletter form stacking */
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-text h3 {
+    font-size: 1.75rem !important;
+  }
+
+  /* Toast notification mobile */
+  .toast-notification {
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 5rem !important;
+    max-width: none !important;
+  }
+
+  /* Lightbox: buttons inside viewport */
+  .lightbox-container {
+    width: 90vw !important;
   }
 }
 
+/* ── Small phone (max-width: 480px) ── */
 @media (max-width: 480px) {
-  /* Homepage Hero sizing and buttons */
+
+  /* Hero: stacked CTA buttons, smaller text */
   .hero-content h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.25rem !important;
   }
-
   .hero-content p {
-    font-size: 0.95rem !important;
-    margin-bottom: 2rem !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 1.5rem !important;
   }
-
   .hero-actions {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 0.75rem !important;
     width: 100%;
   }
-
   .btn-primary, .btn-outline {
     width: 100% !important;
     padding: 0.85rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
   }
 
-  /* Reservation modal adjustments */
+  /* Hero stats pills */
+  .hero-stats {
+    gap: 0.5rem !important;
+  }
+  .hero-stat-pill {
+    font-size: 0.7rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+
+  /* Homepage hero min-height fix */
+  .homepage-hero {
+    padding: 120px 0 60px 0 !important;
+  }
+
+  /* Reservation modal */
   .modal-container {
-    padding: 2rem 1.25rem 1.5rem 1.25rem !important;
+    width: 95% !important;
+    padding: 1.75rem 1.25rem 1.5rem 1.25rem !important;
+    border-radius: 20px !important;
   }
-
   .modal-header h3 {
-    font-size: 1.75rem !important;
+    font-size: 1.6rem !important;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
   }
 
-  /* Cart drawer padding reduction */
+  /* Cart drawer full width */
+  .cart-drawer {
+    max-width: 100% !important;
+  }
   .cart-header {
     padding: 1.5rem 1.25rem 1rem 1.25rem !important;
   }
-
   .cart-items-container {
     padding: 1rem 1.25rem !important;
   }
-
   .cart-footer {
     padding: 1.25rem !important;
   }
 
-  /* About intro images sizing */
-  .about-intro-main-img {
-    height: 280px !important;
+  /* Section titles */
+  .section-title {
+    font-size: 2rem !important;
   }
 
+  /* Passion section */
+  .main-passion-img {
+    height: 300px !important;
+  }
+  .overlap-passion-img {
+    height: 150px !important;
+    width: 45% !important;
+  }
+
+  /* Features section */
+  .features-main-img {
+    height: 300px !important;
+  }
+  .floating-testimonial {
+    position: relative !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    margin-top: 1rem;
+  }
+
+  /* About images */
+  .about-intro-main-img {
+    height: 250px !important;
+  }
+  .about-intro-badge {
+    width: 80px !important;
+    height: 80px !important;
+    bottom: 12px !important;
+    right: -8px !important;
+  }
+  .about-intro-badge .year {
+    font-size: 1.3rem !important;
+  }
+  .about-intro-badge .label {
+    font-size: 0.5rem !important;
+  }
+
+  /* Sourcing images */
   .sourcing-img-left {
-    height: 280px !important;
+    height: 250px !important;
+  }
+  .sourcing-img-top-right,
+  .sourcing-img-bottom-right {
+    height: 150px !important;
+  }
+
+  /* Team grid: single column */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 340px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Numbers section: 2-col with smaller text */
+  .numbers-container {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+    padding: 0 0.5rem;
+  }
+  .number-count {
+    font-size: 2rem !important;
+  }
+  .number-item {
+    padding: 1rem 0.5rem !important;
+  }
+  .number-item p {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* Newsletter */
+  .newsletter-section {
+    padding: 3rem 1.25rem !important;
+  }
+  .newsletter-text h3 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* CTA sections */
+  .about-cta-container h2 {
+    font-size: 1.75rem !important;
+  }
+  .about-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Scrolling ribbon text */
+  .ribbon-item {
+    font-size: 0.7rem !important;
+    margin-right: 2rem !important;
+  }
+  .ribbon-item::after {
+    margin-left: 2rem !important;
+  }
+
+  /* Music player on mobile */
+  .music-player-panel {
+    width: 260px !important;
+    right: -10px !important;
   }
 }
-
-
