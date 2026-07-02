@@ -3592,22 +3592,27 @@ body.page-loaded {
 }
 
 .mobile-nav-reserve {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
-  color: var(--color-white) !important;
-  border-radius: 16px;
-  margin: 0.25rem 0.5rem;
-  flex: 1.2;
-  box-shadow: 0 4px 12px rgba(192, 124, 78, 0.35);
+  background: transparent !important;
+  color: var(--color-text-muted) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  flex: 1 !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .mobile-nav-reserve svg {
-  stroke: var(--color-white) !important;
+  stroke: var(--color-text-muted) !important;
 }
 
-.mobile-nav-reserve:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(192, 124, 78, 0.45);
-  color: var(--color-white) !important;
+.mobile-nav-reserve:hover,
+.mobile-nav-reserve.active {
+  color: var(--color-primary) !important;
+}
+
+.mobile-nav-reserve:hover svg,
+.mobile-nav-reserve.active svg {
+  stroke: var(--color-primary) !important;
 }
 
 /* --- NUMBERS / COUNTER SECTION --- */
@@ -4206,6 +4211,32 @@ header.sticky {
   /* Food card image height */
   .food-card-img-container {
     height: 200px !important;
+  }
+
+  /* Menu page header controls styling on mobile */
+  .menu-results-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.25rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .menu-results-count {
+    text-align: center !important;
+  }
+  .menu-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+  .search-box {
+    width: 100% !important;
+  }
+  .sort-select {
+    width: 100% !important;
+  }
+  .view-toggles {
+    display: none !important;
   }
 
   /* Gallery: simple 2-column with equal rows */
