@@ -1367,6 +1367,7 @@ footer {
   padding: 2rem;
   border: 1px solid var(--color-border);
   margin-bottom: 2rem;
+  min-width: 0;
 }
 
 .sidebar-title {
@@ -1721,11 +1722,12 @@ footer {
 
 @media (max-width: 900px) {
   .menu-page-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     margin-top: 2rem;
   }
   .menu-sidebar {
     position: static;
+    min-width: 0;
   }
   .menu-items-grid.list-view .food-card {
     flex-direction: column;
