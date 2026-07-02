@@ -4219,8 +4219,12 @@ header.sticky {
   }
 
   .menu-items-inner-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    display: block !important;
+  }
+
+  .menu-items-inner-grid .food-card {
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
   }
 
   /* Food card image height */
@@ -4229,6 +4233,27 @@ header.sticky {
   }
 
   /* Menu page header controls styling on mobile */
+  .menu-page-container {
+    margin: 2rem auto 5rem auto !important;
+    padding: 0 1rem !important;
+    gap: 2rem !important;
+  }
+  .menu-sidebar {
+    top: auto !important;
+  }
+  .sidebar-widget {
+    padding: 1.25rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .promo-card {
+    padding: 1.25rem !important;
+  }
+  .menu-results-count h2 {
+    font-size: 1.5rem !important;
+  }
+  .menu-results-count p {
+    font-size: 0.75rem !important;
+  }
   .menu-results-header {
     flex-direction: column !important;
     align-items: stretch !important;
@@ -4252,6 +4277,40 @@ header.sticky {
   }
   .view-toggles {
     display: none !important;
+  }
+  .menu-category-section {
+    margin-bottom: 2.5rem !important;
+  }
+  .category-section-title {
+    font-size: 1.6rem !important;
+    gap: 0.5rem !important;
+  }
+  .category-section-title svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .category-section-desc {
+    font-size: 0.82rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .food-card-img-container {
+    height: 200px !important;
+  }
+  .food-card-info {
+    padding: 1.25rem !important;
+  }
+  .food-card-title {
+    font-size: 1.25rem !important;
+  }
+  .food-card-desc {
+    margin-bottom: 1.25rem !important;
+  }
+  .food-card-footer {
+    gap: 0.75rem !important;
+    flex-wrap: wrap !important;
+  }
+  .food-card-price {
+    font-size: 1.1rem !important;
   }
 
   /* Gallery: simple 2-column with equal rows */
@@ -4340,6 +4399,61 @@ header.sticky {
 
 /* ── Small phone (max-width: 480px) ── */
 @media (max-width: 480px) {
+
+  /* Menu page: tighten spacing further on small phones */
+  .menu-page-container {
+    margin: 1.5rem auto 4rem auto !important;
+    padding: 0 0.75rem !important;
+    gap: 1.5rem !important;
+  }
+  .sidebar-widget {
+    padding: 1rem !important;
+  }
+  .promo-card {
+    padding: 1rem !important;
+  }
+  .menu-results-count h2 {
+    font-size: 1.35rem !important;
+  }
+  .menu-results-header {
+    margin-bottom: 1.25rem !important;
+  }
+  .search-input,
+  .sort-select {
+    font-size: 0.8rem !important;
+  }
+  .menu-items-grid,
+  .menu-items-inner-grid {
+    gap: 1rem !important;
+  }
+  .menu-category-section {
+    margin-bottom: 2rem !important;
+  }
+  .category-section-title {
+    font-size: 1.35rem !important;
+  }
+  .category-section-desc {
+    font-size: 0.78rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .food-card-img-container {
+    height: 180px !important;
+  }
+  .food-card-info {
+    padding: 1rem !important;
+  }
+  .food-card-title {
+    font-size: 1.15rem !important;
+  }
+  .food-card-desc {
+    font-size: 0.8rem !important;
+  }
+  .food-card-footer {
+    align-items: flex-start !important;
+  }
+  .btn-card-add {
+    padding: 0.45rem 0.9rem !important;
+  }
 
   /* Hero: stacked CTA buttons, smaller text */
   .hero-content h1 {
