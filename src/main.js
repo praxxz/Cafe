@@ -737,14 +737,14 @@ function initMenuPage() {
         catSection.innerHTML = `
           <h3 class="category-section-title">${svgIcon} ${cat}</h3>
           <p class="category-section-desc">${descText}</p>
-          <div class="menu-items-inner-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;"></div>
+          <div class="menu-items-inner-grid"></div>
         `;
         
         const innerGrid = catSection.querySelector('.menu-items-inner-grid');
         
         // Handle list view within categories
         if (itemsGrid.classList.contains('list-view')) {
-          innerGrid.style.gridTemplateColumns = '1fr';
+          innerGrid.classList.add('list-view');
         }
         
         catItems.forEach(item => {
@@ -757,14 +757,11 @@ function initMenuPage() {
     } else {
       // Just render plain grid/list of filtered items
       const innerGridWrapper = document.createElement('div');
+      innerGridWrapper.className = 'menu-items-inner-grid';
       innerGridWrapper.style.gridColumn = '1 / -1';
-      innerGridWrapper.style.display = 'grid';
-      innerGridWrapper.style.gap = '2rem';
       
       if (itemsGrid.classList.contains('list-view')) {
-        innerGridWrapper.style.gridTemplateColumns = '1fr';
-      } else {
-        innerGridWrapper.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+        innerGridWrapper.classList.add('list-view');
       }
       
       items.forEach(item => {
